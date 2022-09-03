@@ -19,6 +19,11 @@ func TestEntireStack(t *testing.T) {
 		}
 	}
 
+	// testing the stack size
+	if s.Size() != 5 {
+		t.Fatal("stack should be size of five")
+	}
+
 	if err := s.Push(6); err == nil {
 		t.Fatal("stack should be full")
 	}
@@ -35,6 +40,10 @@ func TestEntireStack(t *testing.T) {
 		}
 	}
 
+	// testing the stack size
+	if s.Size() != 0 {
+		t.Fatal("stack should be size of five")
+	}
 	if _, err := s.Pop(); err == nil {
 		t.Fatal("stack should be empty")
 	}
